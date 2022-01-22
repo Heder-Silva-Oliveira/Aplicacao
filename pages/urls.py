@@ -7,5 +7,5 @@ app_name = "pages"
 
 urlpatterns = [
     path("", views.HomePageView.as_view(), name="home"),
-    path("/store", views.storepage, name="storepage"),
+    path("store/", views.storepage, name="storepage"),
 ]
