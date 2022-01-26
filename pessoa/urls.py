@@ -7,6 +7,6 @@ app_name = "pessoa"
 
 
 urlpatterns = [
-    path('pessoa/', ListaPessoaView.as_view(), name='pessoa.index'),
-    path('pessoa/', views.pessoapage, name='pessoapage'),
+    path("pessoa/", views.pagepessoa, name="pagepessoa"),
+
 ]
