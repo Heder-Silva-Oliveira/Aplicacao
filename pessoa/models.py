@@ -9,7 +9,7 @@ class Pessoa(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     uf = models.CharField(max_length=2)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.nome_completo
 
 

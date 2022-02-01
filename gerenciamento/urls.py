@@ -9,6 +9,7 @@ urlpatterns = [
     # Local
     path("", include("pages.urls", namespace="pages")),
     path("", include("pages.urls", namespace="storepage")),
-    path("", include("pessoa.urls", namespace="pagepessoa")),
+    #path("", include("pessoa.urls", namespace="pagepessoa")),
+    path("", include("pessoa.urls", namespace="form_modelform")),
 
 ]

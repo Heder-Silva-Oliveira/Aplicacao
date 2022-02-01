@@ -7,6 +7,7 @@ app_name = "pessoa"
 
 
 urlpatterns = [
-    path("pessoa/", views.pagepessoa, name="pagepessoa"),
+    #path("pessoa/", views.pagepessoa, name="pagepessoa"),
+    path("pessoa/", views.form_modelform, name="form_modelform"),
 
 ]
