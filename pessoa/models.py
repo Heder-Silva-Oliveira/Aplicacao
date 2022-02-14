@@ -26,6 +26,3 @@ class Pessoa(models.Model):
 
 
 
-
-
-

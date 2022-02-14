@@ -1,99 +1,193 @@
 {% extends 'base.html' %}
-
 {% block title %}Sistema de Gerenciamento{% endblock %}
 
 {% block content %}
     Painel de gerenciamento
 <div class="container-fluid">
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link active" href="/pessoa">Novo cadastro</a>
-        </li>
-    </ul>
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="/pessoa" class="nav-link px-0"> <span class="d-none d-sm-inline">cadastro</span>  </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                    </li>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1">loser</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3">
+            <html>
+              <head>
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                  google.charts.load("current", {packages:["corechart"]});
+                  google.charts.setOnLoadCallback(drawChart);
+                  function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                      ['Task', 'Hours per Day'],
+                      ['AC', 32],
+                      ['AL', 12],
+                      ['AP', 32],
+                      ['AM', 29],
+                      ['BA', 26],
+                      ['CE', 27],
+                      ['DF', 22],
+                      ['ES', 44],
+                      ['GO', 24],
+                      ['MA', 24],
+                      ['MT', 20],
+                      ['MS', 12],
+                      ['MG', 11],
+                      ['PA', 22],
+                      ['PB', 55],
+                      ['PR', 11],
+                      ['PE', 13],
+                      ['PI', 11],
+                      ['RJ', 12],
+                      ['RN', 11],
+                      ['RS', 17],
+                      ['RO', 11],
+                      ['RR', 11],
+                      ['SC', 11],
+                      ['SP', 37],
+                      ['SE', 11],
+                      ['TO', 23],
+                    ]);
+
+                    var options = {
+                      title: 'Clientes por estado',
+                      pieHole: 0.4,
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                    chart.draw(data, options);
+                  }
+                </script>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                  google.charts.load('current', {'packages':['line']});
+                  google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+
+                  var data = new google.visualization.DataTable();
+                  data.addColumn('number', 'Mês');
+                  data.addColumn('number', 'Novos cadastros');
+                  data.addColumn('number', 'Cadastros ativos');
+                  data.addColumn('number', 'Cadastros inativos');
+
+                  data.addRows([
+                    [1,  40, 80, 41],
+                    [2,  30, 69, 32],
+                    [3,  25,   57, 25],
+                    [4,  11, 18, 10],
+                    [5,  11, 17, 10],
+                    [6,   8, 13,  7],
+                    [7,   7, 12,  9],
+                    [8,  12, 29, 10],
+                    [9,  16, 42, 14],
+                    [10, 12, 30, 11],
+                    [11,  5,  7,  4],
+                    [12,  6,  8,  5]
+                  ]);
+
+                  var options = {
+                    chart: {
+                      title: 'Relatorio mensal',
+                      subtitle: 'compreenção de crecimento'
+                    },
+                    width: 900,
+                    height: 500,
+                    axes: {
+                      x: {
+                        0: {side: 'top'}
+                      }
+                    }
+                  };
+
+                  var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+                  chart.draw(data, google.charts.Line.convertOptions(options));
+                }
+              </script>
+              </head>
+              <body>
+                <div id="donutchart" style="width: 900px; height: 500px;"></div>
+                <div id="line_top_x"></div>
+              </body>
+            </html>
+        </div>
+    </div>
 </div>
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['PR', 11],
-          ['PA', 2],
-          ['MT', 2],
-          ['MS', 2],
-          ['SP', 7],
-          ['MG', 11],
-          ['TO', 2],
-          ['RN', 2],
-          ['AM', 2],
-          ['RS', 7]
-        ]);
-
-        var options = {
-          title: 'Clientes por estado',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['line']});
-      google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-
-      var data = new google.visualization.DataTable();
-      data.addColumn('number', 'Mês');
-      data.addColumn('number', 'Novos cadastros');
-      data.addColumn('number', 'Cadastros ativos');
-      data.addColumn('number', 'Cadastros inativos');
-
-      data.addRows([
-        [1,  37.8, 80.8, 41.8],
-        [2,  30.9, 69.5, 32.4],
-        [3,  25.4,   57, 25.7],
-        [4,  11.7, 18.8, 10.5],
-        [5,  11.9, 17.6, 10.4],
-        [6,   8.8, 13.6,  7.7],
-        [7,   7.6, 12.3,  9.6],
-        [8,  12.3, 29.2, 10.6],
-        [9,  16.9, 42.9, 14.8],
-        [10, 12.8, 30.9, 11.6],
-        [11,  5.3,  7.9,  4.7],
-        [12,  6.6,  8.4,  5.2],
-        [13,  4.8,  6.3,  3.6],
-        [14,  4.2,  6.2,  3.4]
-      ]);
-
-      var options = {
-        chart: {
-          title: 'Relatorio mensal',
-          subtitle: 'compreenção de crecimento'
-        },
-        width: 900,
-        height: 500,
-        axes: {
-          x: {
-            0: {side: 'top'}
-          }
-        }
-      };
-
-      var chart = new google.charts.Line(document.getElementById('line_top_x'));
-
-      chart.draw(data, google.charts.Line.convertOptions(options));
-    }
-  </script>
-  </head>
-  <body>
-    <div id="donutchart" style="width: 900px; height: 500px;"></div>
-    <div id="line_top_x"></div>
-  </body>
-</html>
 {% endblock %}
