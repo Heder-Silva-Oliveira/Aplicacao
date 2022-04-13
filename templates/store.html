@@ -87,41 +87,17 @@
         <div class="col py-3">
             <html>
               <head>
-                {{graf}}
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <script type="text/javascript">
                   google.charts.load("current", {packages:["corechart"]});
                   google.charts.setOnLoadCallback(drawChart);
                   function drawChart() {
                     var data = google.visualization.arrayToDataTable([
-                      ['Task', 'Hours per Day'],
-                      ['AC', 32],
-                      ['AL', 12],
-                      ['AP', 32],
-                      ['AM', 29],
-                      ['BA', 26],
-                      ['CE', 27],
-                      ['DF', 22],
-                      ['ES', 44],
-                      ['GO', 24],
-                      ['MA', 24],
-                      ['MT', 20],
-                      ['MS', 12],
-                      ['MG', 11],
-                      ['PA', 22],
-                      ['PB', 55],
-                      ['PR', 11],
-                      ['PE', 13],
-                      ['PI', 11],
-                      ['RJ', 12],
-                      ['RN', 11],
-                      ['RS', 17],
-                      ['RO', 11],
-                      ['RR', 11],
-                      ['SC', 11],
-                      ['SP', 37],
-                      ['SE', 11],
-                      ['TO', 23],
+                    ['{{data}}],
+                    {%for k  in data%}
+                     ['{{k}}'],
+                    {% endfor %}
+
                     ]);
 
                     var options = {

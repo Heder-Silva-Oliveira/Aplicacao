@@ -1,5 +1,8 @@
+import json
+
 from django.shortcuts import render
 from django.views.generic import ListView
+import conectdb
 
 from .forms import PessoaForm
 from .models import Pessoa
@@ -32,9 +35,13 @@ def form_modelform(request):
         return render(request, "pessoa.html", context=context)
 
 
-def grafico(request):
-    graf = Pessoa.uf.all().order_by('uf')
-    context = {
-        'graf': graf
-    }
-    return render(request, "store.html", context=context)
+
+
+
+def clientes(request):
+    data = conectdb.estados #esta variavel esta com os dados
+
+    return render(request, "store.html", context={'data': data, })
+
+
+
