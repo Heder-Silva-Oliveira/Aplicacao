@@ -1,11 +1,12 @@
 import json
 
+from django.db.models import Count
 from django.shortcuts import render
 from django.views.generic import ListView
 import conectdb
 
 from .forms import PessoaForm
-from .models import Pessoa
+from pessoa.models import Pessoa
 
 
 class ListaPessoaView(ListView):
@@ -35,13 +36,12 @@ def form_modelform(request):
         return render(request, "pessoa.html", context=context)
 
 
-
-
-
 def clientes(request):
-    data = conectdb.estados #esta variavel esta com os dados
+    data = {Pessoa.objects.all().values('us').annotate(total=Count('uf')).order_by('-total')}
+    return render(request, "home.html", context={'data': data})
 
-    return render(request, "store.html", context={'data': data, })
+
+
 
 
 

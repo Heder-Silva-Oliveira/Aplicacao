@@ -93,13 +93,12 @@
                   google.charts.setOnLoadCallback(drawChart);
                   function drawChart() {
                     var data = google.visualization.arrayToDataTable([
-                    ['{{data}}],
-                    {%for k  in data%}
-                     ['{{k}}'],
+                    ['estado', 'quantidade'],
+                    {% for estado in data %}
+                      ['{{ estado.uf }}', {{ estado.total }}],
                     {% endfor %}
 
                     ]);
-
                     var options = {
                       title: 'Clientes por estado',
                       pieHole: 0.4,
